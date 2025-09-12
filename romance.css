@@ -1386,11 +1386,7 @@ input[type="number"],
     margin-bottom: 14px;
     border-radius: 8px;
   }
-  .tabla-productos table, .tabla-productos thead, .tabla-productos tbody, .tabla-productos tr {
-    width: 100%;
-    display: table;
-    table-layout: fixed;
-  }
+  
   .tabla-productos th, .tabla-productos td {
     padding: 8px 4px;
     font-size: 13px;
@@ -1400,3 +1396,4 @@ input[type="number"],
     min-width: 70px;
   }
 }
+
