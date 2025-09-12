@@ -1438,3 +1438,63 @@ input[type="number"],
   }
 }
 
+/* ========== MOBILE FIX 01 (Lu & Tú) ========== */
+@media screen and (max-width: 600px) {
+
+  /* 1) Campos en columna: etiqueta arriba, campo abajo */
+  .box {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  .box label {
+    width: 100% !important;
+    margin-bottom: 4px !important;
+    font-size: 14px !important;
+  }
+
+  /* 2) Radios de “Estado” alineados y sin desbordes */
+  #box-estado {
+    justify-content: flex-start !important;
+    gap: 16px !important;
+    flex-wrap: wrap !important;
+  }
+  #box-estado .estado-item label {
+    font-size: 14px !important;
+  }
+
+  /* 3) “Código” + lupa en una sola fila normal */
+  .codigo-group {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+  .codigo-group input[type="number"] {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    width: auto !important;
+    font-size: 16px !important;
+  }
+  .codigo-group button {
+    flex: 0 0 auto !important;
+    width: auto !important;          /* evita que el botón se haga 100% */
+    height: 40px !important;
+    padding: 0 12px !important;
+  }
+
+  /* 4) Botones de acción más ordenados (2 por fila) */
+  #box-botones {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+  #box-botones .boton {
+    flex: 1 1 calc(50% - 8px);
+    max-width: calc(50% - 8px);
+  }
+
+  /* 5) Tabla: scroll suave en móvil */
+  .tabla-productos {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
