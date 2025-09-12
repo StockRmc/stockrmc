@@ -1643,4 +1643,20 @@ input[type="number"],
   background: #c2185b;
 }
 
+/* ========== BOTÓN AGREGAR SOLO CENTRADO EN INVENTARIO/RECEPCIÓN ========== */
+@media screen and (max-width: 600px) {
+  /* Caso Inventario/Recepción: cuando NO está el botón Bipear visible */
+  #box-botones:has(#boton-bipear[hidden]) {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  #box-botones:has(#boton-bipear[hidden]) .boton {
+    width: 80% !important;
+    max-width: 260px !important;
+  }
+}
+
 
