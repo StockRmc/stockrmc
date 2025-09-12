@@ -1601,6 +1601,18 @@ input[type="number"],
   }
 }
 
+@media screen and (max-width: 600px) {
+  /* Centrar botón Agregar en Inventario/Recepción */
+  #box-botones:has(#boton-bipear[hidden]) #boton-agregar {
+    grid-column: 1 / -1 !important;   /* ocupa toda la fila */
+    justify-self: center !important;  /* centrado */
+    text-align: center !important;    /* asegura el texto centrado */
+    width: auto !important;           /* ancho automático */
+    min-width: 150px !important;      /* tamaño mínimo para que no se encoja */
+    max-width: 260px !important;      /* evita que se estire demasiado */
+  }
+}
+
 
 
 
