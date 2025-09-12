@@ -1568,3 +1568,43 @@ input[type="number"],
   }
 }
 
+/* ========== RADIOS PERSONALIZADOS (cross-browser) ========== */
+#box-estado {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+#box-estado input[type="radio"] {
+  position: absolute;
+  opacity: 0; /* ocultamos el radio nativo */
+}
+
+#box-estado label {
+  position: relative;
+  padding-left: 26px; /* espacio para la bolita */
+  cursor: pointer;
+  font-size: 15px;
+  user-select: none;
+}
+
+/* bolita base */
+#box-estado label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: 2px solid #c2185b; /* color borde fucsia */
+  border-radius: 50%;
+  background: #fff;
+}
+
+/* cuando está seleccionado */
+#box-estado input[type="radio"]:checked + label::before {
+  background: #c2185b; /* relleno fucsia */
+}
+
+
