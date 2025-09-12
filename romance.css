@@ -1341,23 +1341,51 @@ input[type="number"],
   color: #333;                    /* gris oscuro para contraste */
 }
 
-/* --- AJUSTE RESPONSIVE FINO PARA FORMULARIO Y TABLA EN CELULAR --- */
 @media screen and (max-width: 600px) {
-  #contenedor { ... }
-  /* ...resto del bloque... */
-  .tabla-productos, .tabla-productos thead, .tabla-productos tbody, .tabla-productos tr {
-    width: 100% !important;
-    box-sizing: border-box !important;
+  /* === TABLA === */
+  .tabla-productos {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    font-size: 13px;
+    border-collapse: collapse;
+    margin-bottom: 14px;
+    background: #fff;
+    white-space: nowrap;
+  }
+  .tabla-productos thead, .tabla-productos tbody {
+    display: table;
+    width: 100%;
+    table-layout: auto;
   }
   .tabla-productos th, .tabla-productos td {
-    font-size: 13px !important;
-    padding: 4px 2px !important;
-    word-break: break-word !important;
-    text-align: center !important;
+    padding: 7px 7px;
+    font-size: 13px;
+    text-align: center;
+    border: 1px solid #e1b4ca;
+    background: #ffeaf7;
+    word-break: keep-all;
+    white-space: nowrap;
   }
   .tabla-productos th {
-    background: #f8c7d2 !important; /* Rosado claro */
-    color: #b03060 !important; /* Rosado oscuro */
-    border-radius: 0 !important;
+    font-weight: bold;
+    color: #b51f56;
+  }
+  /* === BOTONES Y TALLAS === */
+  .boton, button, .btn {
+    font-size: 14px !important;
+    padding: 10px 0 !important;
+    border-radius: 5px !important;
+    margin-bottom: 5px !important;
+    width: 100% !important;
+  }
+  .tallas-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 4px !important;
+  }
+  .talla-box, .talla-input {
+    font-size: 13px !important;
+    padding: 5px 2px !important;
+    min-width: 0 !important;
   }
 }
