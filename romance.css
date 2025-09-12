@@ -1643,52 +1643,6 @@ input[type="number"],
   background: #c2185b;
 }
 
-/* ========== BOTONES VERTICALES EN INVENTARIO/RECEPCIÓN ========== */
-@media screen and (max-width: 600px) {
-  /* Caso Inventario/Recepción: cuando NO está el botón Bipear visible */
-  #box-botones:has(#boton-bipear[hidden]) {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 10px !important;
-  }
-
-  #box-botones:has(#boton-bipear[hidden]) .boton {
-    width: 80% !important;
-    max-width: 260px !important;
-  }
-}
-
-/* INVENTARIO / RECEPCIÓN — Botón Agregar centrado */
-@media screen and (max-width: 600px) {
-  #box-botones .boton {
-    flex: 1 1 calc(50% - 10px);
-    max-width: calc(50% - 10px);
-  }
-
-  /* Cuando Bipear NO existe en la fila, Agregar se centra */
-  #boton-agregar {
-    flex: 1 1 100% !important;
-    max-width: 70% !important;
-    margin: 0 auto !important;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  /* Caso con 3 botones (Inventario / Recepción) */
-  #box-botones .boton:nth-child(1),
-  #box-botones .boton:nth-child(2) {
-    flex: 1 1 calc(50% - 10px) !important;
-    max-width: calc(50% - 10px) !important;
-  }
-
-  #box-botones .boton:nth-child(3) {
-    flex: 1 1 100% !important;
-    max-width: 70% !important;
-    margin: 0 auto !important;
-  }
-}
-
 /* ===== SOLO Inventario/Recepción en móvil ===== */
 @media screen and (max-width: 600px) {
   #box-botones:has(#boton-bipear[hidden]) {
@@ -1749,6 +1703,7 @@ input[type="number"],
     max-width: 260px !important;
   }
 }
+
 
 
 
