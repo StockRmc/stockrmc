@@ -1712,6 +1712,44 @@ input[type="number"],
   }
 }
 
+/* ===== MOBILE FIX DEFINITIVO ===== */
+@media screen and (max-width: 600px) {
+  /* --- CASO DEVOLUCIÓN (4 botones: incluye Bipear) --- */
+  #box-botones:not(:has(#boton-bipear[hidden])) {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    justify-items: stretch !important;
+  }
+
+  #box-botones:not(:has(#boton-bipear[hidden])) .boton {
+    width: 100% !important;
+  }
+
+  /* --- CASO INVENTARIO / RECEPCIÓN (3 botones: sin Bipear) --- */
+  #box-botones:has(#boton-bipear[hidden]) {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    justify-items: stretch !important;
+  }
+
+  /* Primeros dos arriba */
+  #box-botones:has(#boton-bipear[hidden]) #boton-limpiar,
+  #box-botones:has(#boton-bipear[hidden]) #boton-pdf {
+    grid-column: span 1 !important;
+    width: 100% !important;
+  }
+
+  /* Agregar centrado abajo */
+  #box-botones:has(#boton-bipear[hidden]) #boton-agregar {
+    grid-column: 1 / -1 !important;   /* ocupa toda la fila */
+    justify-self: center !important;
+    width: 70% !important;
+    max-width: 260px !important;
+  }
+}
+
 
 
 
