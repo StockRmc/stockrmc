@@ -1689,6 +1689,29 @@ input[type="number"],
   }
 }
 
+/* ===== SOLO Inventario/Recepción en móvil ===== */
+@media screen and (max-width: 600px) {
+  #box-botones:has(#boton-bipear[hidden]) {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    justify-items: stretch !important;
+  }
+
+  #box-botones:has(#boton-bipear[hidden]) #boton-limpiar,
+  #box-botones:has(#boton-bipear[hidden]) #boton-pdf {
+    grid-column: span 1 !important;
+    width: 100% !important;
+  }
+
+  #box-botones:has(#boton-bipear[hidden]) #boton-agregar {
+    grid-column: 1 / -1 !important;
+    justify-self: center !important;
+    width: 70% !important;
+    max-width: 260px !important;
+  }
+}
+
 
 
 
