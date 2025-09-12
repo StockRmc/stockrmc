@@ -1607,4 +1607,40 @@ input[type="number"],
   background: #c2185b; /* relleno fucsia */
 }
 
+/* Radios personalizados universales */
+#box-estado .estado-item {
+  position: relative;
+  padding-left: 26px;
+  cursor: pointer;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ocultamos el input pero lo mantenemos accesible */
+#box-estado input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* bolita base siempre visible */
+#box-estado .estado-item label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: 2px solid #c2185b;
+  border-radius: 50%;
+  background: #fff;
+}
+
+/* cuando está marcado */
+#box-estado .estado-item input[type="radio"]:checked + label::before {
+  background: #c2185b;
+}
+
 
