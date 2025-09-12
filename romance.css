@@ -1340,33 +1340,35 @@ input[type="number"],
   font-size: 12px;                /* tamaño pequeño */
   color: #333;                    /* gris oscuro para contraste */
 }
-/* ======================= */
-/*   ESTILOS PARA CELULAR  */
-/* ======================= */
+
+/* === ADAPTACIÓN PARA CELULARES === */
 @media screen and (max-width: 768px) {
   #contenedor {
+    max-width: 95%;
     padding: 20px;
-    max-width: 100%;
+    margin: auto;
   }
 
   .box {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
   }
 
   label {
     width: 100%;
     margin-bottom: 6px;
+    font-size: 14px;
   }
 
   input,
   select {
     width: 100%;
+    font-size: 14px;
   }
 
   #box-botones {
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
   }
 
   #titulo {
@@ -1380,19 +1382,17 @@ input[type="number"],
   }
 
   .talla-box {
+    min-width: 60px;
     height: auto;
-    min-height: 80px;
-  }
-
-  .talla-input {
-    width: 100%;
-    font-size: 14px;
+    padding: 6px 4px;
   }
 
   .talla-label {
     font-size: 12px;
   }
+
+  .talla-input {
+    font-size: 14px;
+    width: 100%;
+  }
 }
-
-
-
