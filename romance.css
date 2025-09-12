@@ -1342,36 +1342,24 @@ input[type="number"],
 }
 
 @media screen and (max-width: 600px) {
-  /* === TABLA === */
-  .tabla-productos {
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-    font-size: 13px;
-    border-collapse: collapse;
-    margin-bottom: 14px;
-    background: #fff;
-    white-space: nowrap;
+  #contenedor {
+    max-width: 98vw !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 8px 2vw 14px 2vw !important;
+    border-radius: 10px !important;
   }
-  .tabla-productos thead, .tabla-productos tbody {
-    display: table;
-    width: 100%;
-    table-layout: auto;
+  input, select, textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    font-size: 15px !important;
   }
-  .tabla-productos th, .tabla-productos td {
-    padding: 7px 7px;
-    font-size: 13px;
-    text-align: center;
-    border: 1px solid #e1b4ca;
-    background: #ffeaf7;
-    word-break: keep-all;
-    white-space: nowrap;
+  .box, .tallas-grid {
+    width: 100% !important;
+    min-width: 0 !important;
   }
-  .tabla-productos th {
-    font-weight: bold;
-    color: #b51f56;
-  }
-  /* === BOTONES Y TALLAS === */
   .boton, button, .btn {
     font-size: 14px !important;
     padding: 10px 0 !important;
@@ -1387,5 +1375,28 @@ input[type="number"],
     font-size: 13px !important;
     padding: 5px 2px !important;
     min-width: 0 !important;
+  }
+  .tabla-productos {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    font-size: 13px;
+    background: #fff;
+    white-space: nowrap;
+    margin-bottom: 14px;
+    border-radius: 8px;
+  }
+  .tabla-productos table, .tabla-productos thead, .tabla-productos tbody, .tabla-productos tr {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+  }
+  .tabla-productos th, .tabla-productos td {
+    padding: 8px 4px;
+    font-size: 13px;
+    white-space: nowrap;
+    word-break: keep-all;
+    text-align: center;
+    min-width: 70px;
   }
 }
