@@ -1540,3 +1540,19 @@ input[type="number"],
     text-align: center;
   }
 }
+
+/* ========== MOBILE FIX 05 — Radios visibles en móvil ========== */
+@media screen and (max-width: 600px) {
+  #box-estado input[type="radio"] {
+    -webkit-appearance: radio !important;  /* fuerza la bolita en Safari/Chrome móvil */
+    -moz-appearance: radio !important;     /* fuerza en Firefox móvil */
+    appearance: radio !important;
+    width: 18px !important;
+    height: 18px !important;
+    margin-right: 4px !important;
+    vertical-align: middle !important;
+  }
+  #box-estado label {
+    font-size: 15px !important;
+  }
+}
