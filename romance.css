@@ -1674,6 +1674,21 @@ input[type="number"],
   }
 }
 
+@media screen and (max-width: 600px) {
+  /* Caso con 3 botones (Inventario / Recepción) */
+  #box-botones .boton:nth-child(1),
+  #box-botones .boton:nth-child(2) {
+    flex: 1 1 calc(50% - 10px) !important;
+    max-width: calc(50% - 10px) !important;
+  }
+
+  #box-botones .boton:nth-child(3) {
+    flex: 1 1 100% !important;
+    max-width: 70% !important;
+    margin: 0 auto !important;
+  }
+}
+
 
 
 
