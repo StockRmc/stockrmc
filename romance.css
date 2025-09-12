@@ -1438,31 +1438,57 @@ input[type="number"],
   }
 }
 
-/* ========== MOBILE FIX 01 (Lu & Tú) ========== */
+/* ========== MOBILE FIX UNIFICADO (Lu & Tú) ========== */
 @media screen and (max-width: 600px) {
+  /* Contenedor */
+  #contenedor {
+    max-width: 98vw !important;
+    width: 100% !important;
+    padding: 8px 2vw 14px 2vw !important;
+    border-radius: 10px !important;
+  }
 
-  /* 1) Campos en columna: etiqueta arriba, campo abajo */
+  /* Inputs */
+  input, select, textarea {
+    width: 100% !important;
+    font-size: 15px !important;
+    box-sizing: border-box !important;
+  }
+
   .box {
     flex-direction: column !important;
     align-items: flex-start !important;
+    width: 100% !important;
   }
+
   .box label {
     width: 100% !important;
     margin-bottom: 4px !important;
     font-size: 14px !important;
   }
 
-  /* 2) Radios de “Estado” alineados y sin desbordes */
+  /* Estado centrado */
   #box-estado {
-    justify-content: flex-start !important;
-    gap: 16px !important;
-    flex-wrap: wrap !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 24px !important;
+    flex-wrap: nowrap !important;
   }
-  #box-estado .estado-item label {
-    font-size: 14px !important;
+  #box-estado .estado-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    white-space: nowrap !important;
+  }
+  #box-estado input[type="radio"] {
+    appearance: auto !important;
+    -webkit-appearance: auto !important;
+    transform: scale(1.1);
+    margin: 0 4px 0 0;
   }
 
-  /* 3) “Código” + lupa en una sola fila normal */
+  /* Código + lupa en fila */
   .codigo-group {
     display: flex !important;
     align-items: center !important;
@@ -1472,163 +1498,45 @@ input[type="number"],
   .codigo-group input[type="number"] {
     flex: 1 1 auto !important;
     min-width: 0 !important;
-    width: auto !important;
     font-size: 16px !important;
   }
   .codigo-group button {
     flex: 0 0 auto !important;
-    width: auto !important;          /* evita que el botón se haga 100% */
+    width: auto !important;
     height: 40px !important;
     padding: 0 12px !important;
   }
 
-  /* 4) Botones de acción más ordenados (2 por fila) */
+  /* Botonera → 2 filas, 2 columnas */
   #box-botones {
-    flex-wrap: wrap !important;
-    gap: 8px !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    justify-items: stretch !important;
   }
   #box-botones .boton {
-    flex: 1 1 calc(50% - 8px);
-    max-width: calc(50% - 8px);
+    width: 100% !important;
   }
+  #boton-limpiar { order: 1; }
+  #boton-pdf     { order: 2; }
+  #boton-bipear  { order: 3; }
+  #boton-agregar { order: 4; }
 
-  /* 5) Tabla: scroll suave en móvil */
+  /* Tabla responsive */
   .tabla-productos {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    font-size: 13px;
+    background: #fff;
+    border-radius: 8px;
+    white-space: nowrap;
+  }
+  .tabla-productos th, .tabla-productos td {
+    padding: 8px 4px;
+    font-size: 13px;
+    min-width: 70px;
+    text-align: center;
   }
 }
-
-/* ========== MOBILE FIX 02 — botones y “Estado” ========== */
-@media screen and (max-width: 600px) {
-
-  /* 1) “Estado” centrado y radios visibles/alineados */
-  #box-estado {
-    display: flex !important;
-    justify-content: center !important;   /* centrado, como en PC */
-    align-items: center !important;
-    gap: 28px !important;
-    flex-wrap: nowrap !important;
-  }
-  #box-estado .estado-item {
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 6px !important;
-    white-space: nowrap !important;
-  }
-  #box-estado input[type="radio"]{
-    appearance: auto !important;          /* asegura el círculo en Android/iOS */
-    -webkit-appearance: auto !important;
-    transform: scale(1.1);
-    margin: 0 4px 0 0;
-  }
-
-  /* 2) Botones en 2 columnas, centrados; si queda uno suelto, va centrado */
-  #box-botones{
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(0,1fr)) !important;
-    gap: 10px !important;
-    justify-items: stretch !important;
-    justify-content: center !important;
-  }
-  #box-botones .boton{
-    width: 100% !important;      /* llena su celda */
-    max-width: none !important;
-  }
-  /* Último impar centrado y con ancho agradable */
-  #box-botones .boton:last-child:nth-child(odd){
-    grid-column: 1 / -1 !important;
-    justify-self: center !important;
-    width: 60% !important;
-    max-width: 260px !important;
-  }
-
-  /* —— ¿Prefieres todos verticales y CENTRADOS?
-     Comenta las 3 líneas de grid-template-columns (arriba)
-     y descomenta esto:
-     #box-botones { grid-template-columns: 1fr !important; }
-     #box-botones .boton { width: 80% !important; justify-self: center !important; }
-  */
-}
-
-/* ========== MOBILE FIX 03 — devolución y botones ========== */
-@media screen and (max-width: 600px) {
-
-  /* 1) Estado centrado, radios bien alineados */
-  #box-estado {
-    display: flex !important;
-    justify-content: center !important;
-    gap: 20px !important;
-    flex-wrap: nowrap !important;
-  }
-  #box-estado .estado-item {
-    display: flex !important;
-    align-items: center !important;
-    gap: 6px !important;
-  }
-  #box-estado input[type="radio"] {
-    margin: 0 !important;
-    transform: scale(1.1);
-  }
-
-  /* 2) Botonera: 2 filas
-        - Fila 1: Limpiar | Crear PDF
-        - Fila 2: Bipear  | Agregar */
-  #box-botones {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px !important;
-    justify-items: stretch !important;
-  }
-
-  /* Asegurar que cada botón ocupe su celda */
-  #box-botones .boton {
-    width: 100% !important;
-  }
-
-  /* Forzar el orden de los botones */
-  #boton-limpiar   { order: 1; }
-  #boton-pdf       { order: 2; }
-  #boton-bipear    { order: 3; }
-  #boton-agregar   { order: 4; }
-}
-
-/* ========== MOBILE FIX 03 — devolución y botones ========== */
-@media screen and (max-width: 600px) {
-
-  /* 1) Estado centrado, radios bien alineados */
-  #box-estado {
-    display: flex !important;
-    justify-content: center !important;
-    gap: 20px !important;
-    flex-wrap: nowrap !important;
-  }
-  #box-estado .estado-item {
-    display: flex !important;
-    align-items: center !important;
-    gap: 6px !important;
-  }
-  #box-estado input[type="radio"] {
-    margin: 0 !important;
-    transform: scale(1.1);
-  }
-
-  /* 2) Botonera en 2 filas y 2 columnas */
-  #box-botones {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px !important;
-    justify-items: stretch !important;
-  }
-
-  /* Cada botón ocupa su celda completa */
-  #box-botones .boton {
-    width: 100% !important;
-  }
-
-  /* Orden de los botones */
-  #boton-limpiar  { order: 1; }
-  #boton-pdf      { order: 2; }
-  #boton-bipear   { order: 3; }
-  #boton-agregar  { order: 4; }
-}
-
