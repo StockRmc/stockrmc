@@ -1397,3 +1397,44 @@ input[type="number"],
   }
 }
 
+/* Ajuste campo código y botón en móvil */
+.codigo-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.codigo-group input[type="number"] {
+  width: 120px;
+  min-width: 70px;
+  max-width: 140px;
+  font-size: 18px;
+  padding: 6px 8px;
+}
+
+#boton-buscar {
+  padding: 0 14px;
+  font-size: 20px;
+  height: 40px;
+  background: #f4f6f8;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 600px) {
+  .codigo-group input[type="number"] {
+    width: 75px;
+    font-size: 16px;
+  }
+  #boton-buscar {
+    padding: 0 10px;
+    font-size: 18px;
+    height: 34px;
+  }
+}
+
