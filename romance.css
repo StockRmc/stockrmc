@@ -1341,93 +1341,23 @@ input[type="number"],
   color: #333;                    /* gris oscuro para contraste */
 }
 
-/* --- AJUSTE RESPONSIVE EXACTO PARA FORMULARIO BONITO EN CELULAR --- */
+/* --- AJUSTE RESPONSIVE FINO PARA FORMULARIO Y TABLA EN CELULAR --- */
 @media screen and (max-width: 600px) {
-  #contenedor {
-    max-width: 98vw !important;
+  #contenedor { ... }
+  /* ...resto del bloque... */
+  .tabla-productos, .tabla-productos thead, .tabla-productos tbody, .tabla-productos tr {
     width: 100% !important;
-    min-width: unset !important;
-    margin: 12px auto !important;
-    padding: 10px 2vw 16px 2vw !important;
-    border-radius: 12px;
-    box-shadow: 0 0 8px #eee;
-    background: #fff;
-  }
-
-  .box, .tallas-grid {
-    flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 8px !important;
-    margin-bottom: 12px !important;
-    width: 100% !important;
-  }
-
-  label {
-    width: 100% !important;
-    margin-bottom: 3px !important;
-    font-size: 15px !important;
-    text-align: left !important;
-  }
-
-  input,
-  select {
-    width: 100% !important;
-    font-size: 15px !important;
-    padding: 9px 10px !important;
     box-sizing: border-box !important;
-    margin-bottom: 2px !important;
   }
-
-  .boton, button, .btn {
-    width: 100% !important;
-    font-size: 15px !important;
-    padding: 12px 0 !important;
-    margin-bottom: 8px !important;
-    border-radius: 7px !important;
-  }
-
-  #titulo {
-    font-size: 22px !important;
-    margin-bottom: 12px !important;
-    padding: 0 !important;
-    text-align: center !important;
-  }
-
-  #mensaje-bienvenida {
+  .tabla-productos th, .tabla-productos td {
     font-size: 13px !important;
-    margin-bottom: 18px !important;
+    padding: 4px 2px !important;
+    word-break: break-word !important;
     text-align: center !important;
   }
-
-  .tallas-grid {
-    display: grid !important;
-    grid-template-columns: repeat(4, 1fr) !important; /* 4 columnas en móviles */
-    gap: 6px !important;
-  }
-
-  .talla-box {
-    min-width: 0 !important;
-    height: auto !important;
-    padding: 5px 2px !important;
-    font-size: 13px !important;
-    text-align: center !important;
-  }
-
-  .talla-label {
-    font-size: 12px !important;
-    margin-top: 2px !important;
-    text-align: center !important;
-  }
-  .talla-input {
-    font-size: 15px !important;
-    width: 100% !important;
-    padding: 6px 2px !important;
-    text-align: center !important;
-  }
-  /* Ajuste para la tabla del resumen abajo */
-  .tabla-productos {
-    font-size: 13px !important;
-    width: 100% !important;
-    overflow-x: auto !important;
+  .tabla-productos th {
+    background: #f8c7d2 !important; /* Rosado claro */
+    color: #b03060 !important; /* Rosado oscuro */
+    border-radius: 0 !important;
   }
 }
