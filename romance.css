@@ -1340,4 +1340,59 @@ input[type="number"],
   font-size: 12px;                /* tamaño pequeño */
   color: #333;                    /* gris oscuro para contraste */
 }
+/* ======================= */
+/*   ESTILOS PARA CELULAR  */
+/* ======================= */
+@media screen and (max-width: 768px) {
+  #contenedor {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  label {
+    width: 100%;
+    margin-bottom: 6px;
+  }
+
+  input,
+  select {
+    width: 100%;
+  }
+
+  #box-botones {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  #titulo {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  #mensaje-bienvenida {
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+
+  .talla-box {
+    height: auto;
+    min-height: 80px;
+  }
+
+  .talla-input {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .talla-label {
+    font-size: 12px;
+  }
+}
+
+
 
