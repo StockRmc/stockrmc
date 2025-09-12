@@ -1498,3 +1498,55 @@ input[type="number"],
   }
 }
 
+/* ========== MOBILE FIX 02 — botones y “Estado” ========== */
+@media screen and (max-width: 600px) {
+
+  /* 1) “Estado” centrado y radios visibles/alineados */
+  #box-estado {
+    display: flex !important;
+    justify-content: center !important;   /* centrado, como en PC */
+    align-items: center !important;
+    gap: 28px !important;
+    flex-wrap: nowrap !important;
+  }
+  #box-estado .estado-item {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    white-space: nowrap !important;
+  }
+  #box-estado input[type="radio"]{
+    appearance: auto !important;          /* asegura el círculo en Android/iOS */
+    -webkit-appearance: auto !important;
+    transform: scale(1.1);
+    margin: 0 4px 0 0;
+  }
+
+  /* 2) Botones en 2 columnas, centrados; si queda uno suelto, va centrado */
+  #box-botones{
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0,1fr)) !important;
+    gap: 10px !important;
+    justify-items: stretch !important;
+    justify-content: center !important;
+  }
+  #box-botones .boton{
+    width: 100% !important;      /* llena su celda */
+    max-width: none !important;
+  }
+  /* Último impar centrado y con ancho agradable */
+  #box-botones .boton:last-child:nth-child(odd){
+    grid-column: 1 / -1 !important;
+    justify-self: center !important;
+    width: 60% !important;
+    max-width: 260px !important;
+  }
+
+  /* —— ¿Prefieres todos verticales y CENTRADOS?
+     Comenta las 3 líneas de grid-template-columns (arriba)
+     y descomenta esto:
+     #box-botones { grid-template-columns: 1fr !important; }
+     #box-botones .boton { width: 80% !important; justify-self: center !important; }
+  */
+}
+
