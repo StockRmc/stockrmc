@@ -1341,6 +1341,22 @@ input[type="number"],
   color: #333;                    /* gris oscuro para contraste */
 }
 
+/* === AJUSTES PARA MÓVIL === */
+@media (max-width: 600px) {
+
+  /* Subtítulo de bienvenida con más espacio */
+  #mensaje-bienvenida {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  /* Separación entre subtítulo y el select */
+  #bienvenida select {
+    margin-top: 14px;
+  }
+
+}
+
 
 
 
