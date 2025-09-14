@@ -1492,3 +1492,25 @@ table {
     text-align: center;
   }
 }
+
+/* 🎯 AJUSTE FINAL PARA BLOQUE DE TALLAS EN MÓVIL */
+@media screen and (max-width: 768px) {
+  .tallas-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 15px;
+  }
+
+  .tallas-grid input[type="number"] {
+    font-size: 18px;
+    padding: 8px;
+    height: 45px;
+  }
+
+  .tallas-grid label {
+    font-size: 14px;
+  }
+}
