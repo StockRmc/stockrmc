@@ -1675,6 +1675,29 @@ input:focus, select:focus, textarea:focus{
   box-shadow:var(--rom-shadow) !important;
 }
 
+/* ===== INPUTS BONITOS ===== */
+:root{
+  --rom-borde:#d5d9df;
+  --rom-focus:#c2185b;
+  --rom-shadow: 0 0 0 3px rgba(194,24,91,.18);
+}
+input, select, textarea{
+  appearance: none;
+  background:#fff !important;
+  border:1.5px solid var(--rom-borde) !important;
+  border-radius:10px !important;
+  padding:10px 12px !important;
+  font-size:15px !important;
+  color:#2c3e50 !important;
+  box-shadow:none !important;
+  transition:border-color .15s ease, box-shadow .15s ease;
+}
+input:focus, select:focus, textarea:focus{
+  outline:0 !important;
+  border-color:var(--rom-focus) !important;
+  box-shadow:var(--rom-shadow) !important;
+}
+
 
 
 
