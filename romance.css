@@ -1514,3 +1514,36 @@ table {
     font-size: 14px;
   }
 }
+
+/* === OVERRIDE: BLOQUE DE TALLAS EN MÓVIL (más ancho y sin tope) === */
+@media (max-width: 768px) {
+
+  /* Estira el cuadro gris hacia los bordes blancos del contenedor */
+  #bloque-tallas {
+    margin-left: -14px;   /* ajusta a -10 / -16 si quieres más/menos “abrazo” */
+    margin-right: -14px;
+    padding: 12px 12px;   /* deja buen aire interno */
+    border-radius: 12px;
+  }
+
+  /* La grilla NO debe tener tope de ancho ni auto-centrarse */
+  .tallas-grid {
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 10px !important;
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  /* Por si el HTML usa #bloque-tallas como grilla (variación antigua) */
+  #bloque-tallas.tallas-grid,
+  #bloque-tallas.grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  /* Cajitas un poquito más generosas sin romper las 2x4 */
+  .talla-box { min-width: 76px !important; }
+  .talla-input { height: 48px !important; line-height: 48px !important; }
+}
