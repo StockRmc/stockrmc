@@ -1420,3 +1420,16 @@ table {
   width: 100%;
   border-collapse: collapse;
 }
+
+/* Permitir scroll horizontal en móvil solo a la tabla */
+#tablaProductos {
+  overflow-x: auto;
+  width: 100%;
+}
+
+#tablaProductos table {
+  min-width: 600px;
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
