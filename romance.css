@@ -1465,12 +1465,27 @@ table {
 }
 /* === FIN AJUSTE DE TALLAS EN MÓVIL === */
 
-/* 🌟 ESTILO RESPONSIVO - TALLAS EN 2 FILAS DE 4 (MÓVIL) */
+/* 🌟 ESTILO RESPONSIVO - TALLAS EN 2 FILAS DE 4 (MÓVIL - AJUSTADO) */
 @media screen and (max-width: 768px) {
   #bloque-tallas {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    gap: 5px;
     justify-items: center;
+    align-items: center;
+    padding: 10px;
+  }
+
+  #bloque-tallas input {
+    width: 50px;
+    text-align: center;
+  }
+
+  #bloque-tallas label {
+    font-size: 12px;
+    display: block;
+    text-align: center;
   }
 }
+
+
