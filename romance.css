@@ -1341,40 +1341,42 @@ input[type="number"],
   color: #333;                    /* gris oscuro para contraste */
 }
 
-/* === AJUSTES CORRECTOS PARA MÓVIL === */
+/* === AJUSTES DEFINITIVOS PARA MÓVIL === */
 @media (max-width: 600px) {
 
-  /* Subtítulo debajo del título */
+  /* Subtítulo separado del título */
   #mensaje-bienvenida {
-    margin-top: 20px;
-    margin-bottom: 24px;
+    margin-top: 18px;
+    margin-bottom: 28px;
     font-size: 16px;
-    line-height: 1.3;
+    line-height: 1.4;
   }
 
-  /* Ajustes al bloque de tipo de informe */
+  /* Bloques de input separados y verticales */
   .box {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 6px;
-    margin-bottom: 18px;
+    padding-bottom: 14px;
   }
 
   .box label {
     width: 100% !important;
     font-size: 15px;
+    margin-bottom: 6px;
   }
 
-  .box select,
-  .box input {
+  .box input,
+  .box select {
     width: 100%;
-    padding: 8px 10px;
+    padding: 10px 12px;
     font-size: 15px;
     box-sizing: border-box;
   }
 
 }
+
+
 
 
 
