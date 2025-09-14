@@ -1613,6 +1613,39 @@ input[type="number"],
   }
 }
 
+/* ===== CENTRAR AGREGAR EN INVENTARIO/RECEPCIÓN (MÓVIL) ===== */
+@media screen and (max-width: 600px) {
+  #box-botones {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  /* Aplica solo si Bipear está oculto (solo 3 botones) */
+  #boton-limpiar {
+    order: 1;
+  }
+
+  #boton-pdf {
+    order: 2;
+  }
+
+  #boton-agregar {
+    order: 3;
+  }
+
+  #box-botones:has(#boton-bipear[hidden]) {
+    grid-template-columns: 1fr !important;
+    justify-items: center !important;
+  }
+
+  #box-botones:has(#boton-bipear[hidden]) #boton-agregar {
+    width: 100% !important;
+    max-width: 260px !important;
+    text-align: center !important;
+  }
+}
+
 
 
 
