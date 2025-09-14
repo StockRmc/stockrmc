@@ -1396,3 +1396,15 @@ input[type="number"],
     width: 100%;
   }
 }
+
+/* 💻 Tabla desplazable en móvil */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+table {
+  width: 100%;
+  min-width: 600px; /* Fuerza scroll horizontal en pantallas pequeñas */
+  border-collapse: collapse;
+}
