@@ -1613,38 +1613,68 @@ input[type="number"],
   }
 }
 
-/* ===== CENTRAR AGREGAR EN INVENTARIO/RECEPCIÓN (MÓVIL) ===== */
-@media screen and (max-width: 600px) {
-  #box-botones {
+/* ===== BOTONES MÓVIL — DETECCIÓN ROBUSTA ===== */
+@media (max-width: 600px) {
+  /* DEVOLUCIÓN: Bipear presente y visible → 2x2 perfecto */
+  #box-botones:has(#boton-bipear):not(:has(#boton-bipear[hidden])) {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+  #box-botones:has(#boton-bipear):not(:has(#boton-bipear[hidden])) .boton {
+    width: 100% !important;
+  }
+
+  /* INVENTARIO/RECEPCIÓN: Bipear NO existe o está oculto */
+  #box-botones:not(:has(#boton-bipear)),
+  #box-botones:has(#boton-bipear[hidden]) {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 10px !important;
   }
 
-  /* Aplica solo si Bipear está oculto (solo 3 botones) */
-  #boton-limpiar {
-    order: 1;
-  }
-
-  #boton-pdf {
-    order: 2;
-  }
-
-  #boton-agregar {
-    order: 3;
-  }
-
-  #box-botones:has(#boton-bipear[hidden]) {
-    grid-template-columns: 1fr !important;
-    justify-items: center !important;
-  }
-
-  #box-botones:has(#boton-bipear[hidden]) #boton-agregar {
+  /* Arriba: Limpiar | PDF */
+  #box-botones:not(:has(#boton-bipear)) #boton-limpiar,
+  #box-botones:not(:has(#boton-bipear)) #boton-pdf,
+  #box-botones:has(#boton-bipear[hidden]) #boton-limpiar,
+  #box-botones:has(#boton-bipear[hidden]) #boton-pdf {
+    grid-column: span 1 !important;
     width: 100% !important;
-    max-width: 260px !important;
+  }
+
+  /* Abajo: Agregar centrado y más elegante */
+  #box-botones:not(:has(#boton-bipear)) #boton-agregar,
+  #box-botones:has(#boton-bipear[hidden]) #boton-agregar {
+    grid-column: 1 / -1 !important;
+    justify-self: center !important;
     text-align: center !important;
+    width: clamp(180px, 70%, 260px) !important; /* centrado, no pegado al borde */
   }
 }
+
+/* ===== INPUTS BONITOS Y CONSISTENTES ===== */
+:root{
+  --rom-borde:#d5d9df;
+  --rom-focus:#c2185b;
+  --rom-shadow: 0 0 0 3px rgba(194,24,91,.18);
+}
+input, select, textarea{
+  appearance: none;
+  background:#fff !important;
+  border:1.5px solid var(--rom-borde) !important;
+  border-radius:12px !important;
+  padding:10px 12px !important;
+  font-size:16px !important;
+  color:#2c3e50 !important;
+  box-shadow:none !important;
+  transition:border-color .15s ease, box-shadow .15s ease;
+}
+input:focus, select:focus, textarea:focus{
+  outline:0 !important;
+  border-color:var(--rom-focus) !important;
+  box-shadow:var(--rom-shadow) !important;
+}
+
 
 
 
