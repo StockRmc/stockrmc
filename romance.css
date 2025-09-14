@@ -1575,3 +1575,54 @@ table {
     font-size: 13px !important;
   }
 }
+
+/* ======= BLOQUE ÚNICO Y DEFINITIVO — TALLAS EN MÓVIL (2x4, más grandes) ======= */
+@media (max-width: 768px) {
+
+  /* 1) El cuadro gris “abraza” los bordes del contenedor blanco */
+  #bloque-tallas {
+    margin-left: -18px !important;   /* ajusta a -16 / -20 si quieres más/menos abrazo */
+    margin-right: -18px !important;
+    padding: 14px 12px !important;
+    border-radius: 14px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 2) Fuerza 4 columnas SIEMPRE dentro de #bloque-tallas */
+  #bloque-tallas .tallas-grid,
+  #bloque-tallas.tallas-grid,
+  #bloque-tallas.grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;  /* 2 filas de 4 */
+    gap: 12px !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* 3) Cada cajita ocupa su columna y no impone ancho mínimo que rompa la grilla */
+  #bloque-tallas .talla-box {
+    min-width: 0 !important;
+    width: 100% !important;
+    padding: 6px 4px !important;
+    height: auto !important;
+    background: transparent !important; /* el gris lo pone el bloque padre */
+  }
+
+  /* 4) El input se adapta a la columna (nada de 70px fijos) y queda alto/centrado */
+  #bloque-tallas .talla-input {
+    width: 100% !important;           /* se adapta a la columna */
+    max-width: 72px !important;       /* tope razonable para celulares anchos */
+    min-width: 0 !important;
+    height: 44px !important;
+    line-height: 44px !important;
+    font-size: 18px !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 5) Textos bien proporcionados */
+  #bloque-tallas .talla-label { font-size: 14px !important; line-height: 1.1 !important; }
+  #bloque-tallas .talla-num   { font-size: 12px !important; }
+}
