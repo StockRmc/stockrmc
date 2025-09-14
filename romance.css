@@ -1408,3 +1408,15 @@ table {
   min-width: 600px; /* Fuerza scroll horizontal en pantallas pequeñas */
   border-collapse: collapse;
 }
+
+/* ✅ Scroll horizontal para tabla en móvil */
+.tabla-productos-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tabla-productos {
+  min-width: 600px;
+  width: 100%;
+  border-collapse: collapse;
+}
