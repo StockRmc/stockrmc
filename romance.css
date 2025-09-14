@@ -1465,33 +1465,12 @@ table {
 }
 /* === FIN AJUSTE DE TALLAS EN MÓVIL === */
 
-/* === AJUSTE RESPONSIVO PARA BLOQUE DE TALLAS EN MÓVIL === */
-@media (max-width: 480px) {
-  form > div:nth-of-type(6) {
-    display: grid !important;
+/* 🌟 ESTILO RESPONSIVO - TALLAS EN 2 FILAS DE 4 (MÓVIL) */
+@media screen and (max-width: 768px) {
+  #bloque-tallas {
+    display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
-    padding: 10px;
-  }
-
-  form > div:nth-of-type(6) input[type="number"] {
-    width: 100%;
-    text-align: center;
-    font-size: 14px;
-  }
-
-  form > div:nth-of-type(6) label {
-    display: block;
-    text-align: center;
-    font-size: 12px;
-    margin-top: 2px;
-  }
-
-  form > div:nth-of-type(6) .numero {
-    display: block;
-    text-align: center;
-    font-size: 11px;
-    color: #666;
+    gap: 10px;
+    justify-items: center;
   }
 }
-/* === FIN AJUSTE RESPONSIVO PARA BLOQUE DE TALLAS === */
