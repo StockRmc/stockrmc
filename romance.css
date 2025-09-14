@@ -1547,3 +1547,31 @@ table {
   .talla-box { min-width: 76px !important; }
   .talla-input { height: 48px !important; line-height: 48px !important; }
 }
+
+/* 🎯 Fix: siempre mostrar las 8 tallas en 2 filas de 4 en móviles */
+@media (max-width: 768px) {
+  .tallas-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 8px !important;
+    margin: 0 auto !important;
+    padding: 12px !important;
+  }
+
+  /* Ajustamos ancho/alto de cajitas para que entren las 8 */
+  .talla-box {
+    min-width: auto !important;   /* quita el mínimo fijo */
+    width: 100% !important;       /* que se adapte a su columna */
+    height: 80px !important;      /* más bajo para que no se desborde */
+    padding: 6px 4px !important;
+  }
+
+  .talla-input {
+    font-size: 16px !important;
+    height: 38px !important;
+    line-height: 38px !important;
+  }
+
+  .talla-label {
+    font-size: 13px !important;
+  }
+}
