@@ -1344,18 +1344,21 @@ input[type="number"],
 /* === AJUSTES PARA MÓVIL === */
 @media (max-width: 600px) {
 
-  /* Subtítulo de bienvenida con más espacio */
+  /* Subtítulo con un poco más de aire abajo (sin pasarse) */
   #mensaje-bienvenida {
     margin-top: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 18px;
   }
 
-  /* Separación entre subtítulo y el select */
-  #bienvenida select {
-    margin-top: 14px;
+  /* Separación arriba del label del select */
+  label[for="tipo-informe"] {
+    margin-top: 12px;
+    display: inline-block;
   }
 
 }
+
+
 
 
 
