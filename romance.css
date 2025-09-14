@@ -1344,20 +1344,29 @@ input[type="number"],
 /* === AJUSTES PARA MÓVIL === */
 @media (max-width: 600px) {
 
-  /* Subtítulo con un poco más de aire abajo (sin pasarse) */
+  /* Subtítulo con un poco más de aire abajo (ni muy lejos ni pegado) */
   #mensaje-bienvenida {
     margin-top: 20px;
-    margin-bottom: 18px;
+    margin-bottom: 24px;
   }
 
-  /* Separación arriba del label del select */
-  label[for="tipo-informe"] {
-    margin-top: 12px;
-    display: inline-block;
+  /* Mejor separación entre elementos del formulario */
+  .box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    margin-bottom: 16px;
   }
 
+  .box label {
+    width: 100% !important;
+  }
+
+  .box select,
+  .box input {
+    width: 100%;
+  }
 }
-
 
 
 
