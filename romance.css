@@ -117,12 +117,7 @@ input:disabled {
 }
 
 /* Tallas grid */
-.tallas-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)); /* más compactas */
-  gap: 6px; /* menos espacio entre tallas */
-  margin-top: 10px;
-}
+
 
 
 .talla-box {
@@ -234,8 +229,6 @@ td {
   background-color: #fff;
 }
 
-/* ====== FIX preciso para el bloque de tallas ====== */
-
 /* El contenedor gris no se sale más */
 #bloque-tallas {
   width: 100%;
@@ -286,12 +279,7 @@ td {
 }
 
 /* La grilla: más compacta y sin desbordar */
-.tallas-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(72px, 1fr));
-  gap: 8px;
-  margin-top: 6px;
-}
+
 
 /* ITEM ESTADO alineado horizontal y centrado */
 #box-estado {
@@ -1434,7 +1422,7 @@ table {
   white-space: nowrap;
 }
 
-/* === AJUSTE DE TALLAS EN MÓVIL: 2 FILAS DE 4 === */
+
 @media (max-width: 480px) {
   .tallas {
     display: grid;
@@ -1465,7 +1453,7 @@ table {
 }
 /* === FIN AJUSTE DE TALLAS EN MÓVIL === */
 
-/* 🌟 DISTRIBUCIÓN DE TALLAS EN 2 FILAS DE 4 — SIN CAMBIAR HTML */
+
 @media screen and (max-width: 768px) {
   #bloque-tallas {
     display: grid;
@@ -1493,7 +1481,7 @@ table {
   }
 }
 
-/* 🎯 AJUSTE FINAL PARA BLOQUE DE TALLAS EN MÓVIL */
+
 @media screen and (max-width: 768px) {
   .tallas-grid {
     display: grid !important;
@@ -1515,7 +1503,7 @@ table {
   }
 }
 
-/* === OVERRIDE: BLOQUE DE TALLAS EN MÓVIL (más ancho y sin tope) === */
+
 @media (max-width: 768px) {
 
   /* Estira el cuadro gris hacia los bordes blancos del contenedor */
@@ -1548,7 +1536,7 @@ table {
   .talla-input { height: 48px !important; line-height: 48px !important; }
 }
 
-/* 🎯 Fix: siempre mostrar las 8 tallas en 2 filas de 4 en móviles */
+
 @media (max-width: 768px) {
   .tallas-grid {
     grid-template-columns: repeat(4, 1fr) !important;
@@ -1576,7 +1564,7 @@ table {
   }
 }
 
-/* ======= BLOQUE ÚNICO Y DEFINITIVO — TALLAS EN MÓVIL (2x4, más grandes) ======= */
+
 @media (max-width: 768px) {
 
   /* 1) El cuadro gris “abraza” los bordes del contenedor blanco */
@@ -1625,4 +1613,63 @@ table {
   /* 5) Textos bien proporcionados */
   #bloque-tallas .talla-label { font-size: 14px !important; line-height: 1.1 !important; }
   #bloque-tallas .talla-num   { font-size: 12px !important; }
+}
+
+/* ✅ BLOQUE ÚNICO — TALLAS EN MÓVIL (2 filas x 4, cajas grandes) */
+@media (max-width: 768px) {
+
+  #bloque-tallas {
+    margin-left: -16px !important;
+    margin-right: -16px !important;
+    padding: 14px 12px !important;
+    border-radius: 14px !important;
+    box-sizing: border-box !important;
+    display: block !important;
+  }
+
+  #bloque-tallas .tallas-grid,
+  #bloque-tallas.tallas-grid,
+  #bloque-tallas.grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 12px !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #bloque-tallas .talla-box {
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 6px 4px !important;
+    height: 90px !important;
+    background: transparent !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+  }
+
+  #bloque-tallas .talla-input {
+    width: 100% !important;
+    max-width: 72px !important;
+    height: 44px !important;
+    line-height: 44px !important;
+    font-size: 18px !important;
+    text-align: center !important;
+    padding: 0 !important;
+    border: 1px solid #ccc !important;
+    border-radius: 4px !important;
+    box-sizing: border-box !important;
+  }
+
+  #bloque-tallas .talla-label {
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+  }
+
+  #bloque-tallas .talla-num {
+    font-size: 12px !important;
+    color: #555 !important;
+    margin-top: 2px !important;
+  }
 }
